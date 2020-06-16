@@ -30,7 +30,7 @@ class Transformations:
         if type(x) in (int, float):
             self.origin_[0] = x
         else:
-            raise ValueError("Expected an int or float but received {} instead".format(type(x)))
+            raise TypeError("Expected an int or float but received {} instead".format(type(x)))
 
     @property
     def originy(self):
@@ -51,7 +51,7 @@ class Transformations:
         if type(y) in (int, float):
             self.origin_[1] = y
         else:
-            raise ValueError("Expected an int or float but received {} instead".format(type(y)))
+            raise TypeError("Expected an int or float but received {} instead".format(type(y)))
 
     @property
     def origin(self):
@@ -93,7 +93,7 @@ class Transformations:
         if type(angle) in (int, float):
             self.origin_rot = angle
         else:
-            raise ValueError("Expected int or float but received {} instead".format(type(angle)))
+            raise TypeError("Expected int or float but received {} instead".format(type(angle)))
 
     def transform(self, pos):
         """Transforms the given coordinate to the true origin of the system
